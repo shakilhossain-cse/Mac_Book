@@ -10,53 +10,27 @@ const ssd1Tb = document.getElementById('ssd1Tb');
 const primeDalivery = document.getElementById('primeDalivery');
 const chargeDalivery = document.getElementById('chargeDalivery');
 
-const bestPrice = document.getElementById('bestPrice'); 
-const Memory = document.getElementById('extraMemory'); 
+// table data 
+const basePrice = document.getElementById('basePrice'); 
+const memory = document.getElementById('extra-memory-cost'); 
 const storage = document.getElementById('extraStorage'); 
-const Dalivery = document.getElementById('Dalivery'); 
-const total = document.getElementById('totalAmount'); 
-const mainTotal = document.getElementById('mainTotal');
+const dalivery = document.getElementById('Dalivery'); 
+const total = document.getElementById('totalAmount');
+g
 const cupon = document.getElementById('cupon');
 const apply = document.getElementById('applybtn');
 
+const mainTotal = document.getElementById('mainTotal');
 
-function showAmout(product,Amount) {
-    product.innerText = Amount;
-    sumAmout();
-}
 
-function sumAmout() {
-    const price =  parseFloat(bestPrice.innerText);
-    const recentMemory =  parseFloat(Memory.innerText);
-    const recentstorage =  parseFloat(storage.innerText);
-    const recentDalivery =  parseFloat(Dalivery.innerText);
-    
-    const sum = price + recentMemory + recentstorage + recentDalivery;
-    total.innerText = sum;
-    
-    const maintotal = sum;
-
-    mainTotal.innerText = sum;
-
-    // cupon program 
-    apply.addEventListener('click', function () {
-        if (cupon.value == 'stevekaku' ) {
-           const parsentage = maintotal * 20 /100;
-           const mainsum = maintotal - parsentage;
-           mainTotal.innerText = mainsum;
-           cupon.value = '';
-           apply.setAttribute("disabled", true);
-        }
-    });
-}
 
 
 // memory butn click 
 memory_8.addEventListener('click',function() {
-    showAmout(Memory,0);
+    showAmout(memory,0);
 });
 memory_16.addEventListener('click',function() {
-    showAmout(Memory,100);
+    showAmout(memory,100);
     
 });
 // storage btn click 
@@ -71,8 +45,37 @@ ssd1Tb.addEventListener('click',function() {
 });
 // Dalivery btn click 
 primeDalivery.addEventListener('click',function() {
-    showAmout(Dalivery,0);
+    showAmout(dalivery,0);
 });
 chargeDalivery.addEventListener('click',function() {
-    showAmout(Dalivery,20);
+    showAmout(dalivery,20);
 });
+
+apply.addEventListener('click', function () {
+
+    if (cupon.value == 'mishrat') {
+       const discount = parseFloat(total.innerText) * 0.2;
+       const finalTotal= parseFloat(total.innerText) - discount;
+       mainTotal.innerText = finalTotal;
+       cupon.value = "";
+    
+    }
+});
+
+function showAmout(product,Amount) {
+    product.innerText = parseFloat(Amount);
+    calculation();
+}
+
+function calculation() {
+    const getBasePrice  =  parseFloat(basePrice.innerText);
+    const getMemoryPrice  =  parseFloat(memory.innerText);
+    const getStoragePrice  =  parseFloat(storage.innerText);
+    const getDaliveryPrice  =  parseFloat(dalivery.innerText);
+    
+    const getTotalPrice = getBasePrice + getMemoryPrice + getStoragePrice + getDaliveryPrice;
+    total.innerText = getTotalPrice;
+
+    const tempTotal = getTotalPrice;
+    mainTotal.innerText = tempTotal;
+}
