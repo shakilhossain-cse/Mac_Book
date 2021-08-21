@@ -26,46 +26,46 @@
                 </div>
                 <div class="mb-5">
                     <h5 class="fw-bold">Memory</h5>
-                    <button class="btn btn-outline-dark">8GB unifiend memory</button>
-                    <button class="btn btn-outline-dark">16GB unifiend memory</button>
+                    <button class="btn btn-outline-dark" id="memory_8_gb">8GB unifiend memory</button>
+                    <button class="btn btn-outline-dark" id="memory_16_gb">16GB unifiend memory</button>
                 </div>
                 <div class="mb-5">
                     <h5 class="fw-bold">Storage</h5>
-                    <button class="btn btn-outline-dark">256G SSD storage</button>
-                    <button class="btn btn-outline-dark">512GB SSD storage</button>
-                    <button class="btn btn-outline-dark">1TB SSD storage</button>
+                    <button class="btn btn-outline-dark" id="ssd256">256G SSD storage</button>
+                    <button class="btn btn-outline-dark" id="ssd512">512GB SSD storage</button>
+                    <button class="btn btn-outline-dark" id="ssd1Tb">1TB SSD storage</button>
                 </div>
                 <div class="mb-5">
                     <h5 class="fw-bold">Choose your delivery option</h5>
-                    <button class="btn btn-outline-dark">Friday,Aug 25 FREE Prime Delivery</button>
-                    <button class="btn btn-outline-dark">Friday,Aug 21 Delivery charge $20</button>
+                    <button class="btn btn-outline-dark" id="primeDalivery">Friday,Aug 25 FREE Prime Delivery</button>
+                    <button class="btn btn-outline-dark" id="chargeDalivery">Friday,Aug 21 Delivery charge $20</button>
                 </div>
                 <div class="mb-5">
                     <div class="d-flex w-50 justify-content-between  border-bottom border-2 mb-3">
                         <h5 class="fw-bold">Best Price</h5>
-                        <h5 class="fw-bold">$1299</h5>
+                        <h5 class="fw-bold">$<span id="bestPrice">1299</span></h5>
                     </div>
                     <div class="d-flex w-50 justify-content-between  border-bottom border-2 mb-3">
                         <h5 class="fw-bold">Extra Memory Cost</h5>
-                        <h5 class="fw-bold">$0</h5>
+                        <h5 class="fw-bold">$<span id="extraMemory">0</span></h5>
                     </div>
                     <div class="d-flex w-50 justify-content-between  border-bottom border-2 mb-3">
                         <h5 class="fw-bold">Extra Storage Cost </h5>
-                        <h5 class="fw-bold">$0</h5>
+                        <h5 class="fw-bold">$<span id="extraStorage">0</span></h5>
                     </div>
                     <div class="d-flex w-50 justify-content-between  border-bottom border-dark border-2 mb-3">
                         <h5 class="fw-bold">Delivery charge</h5>
-                        <h5 class="fw-bold">$0</h5>
+                        <h5 class="fw-bold">$ <span id="Dalivery">0</span></h5>
                     </div>
                     <div class="d-flex w-50 justify-content-between  border-bottom border-2 mb-3">
                         <h5 class="fw-bold">Total Price</h5>
-                        <h5 class="fw-bold">$1299</h5>
+                        <h5 class="fw-bold">$<span id="totalAmount">1299</span></h5>
                     </div>
                     <div class="w-50 justify-content-between">
                             <h5 class="d-block">Add Promo Code </h5>
                             <div class="d-flex">
-                                <input type="text" class="form-control d-block">
-                                <button class="btn btn-danger">Apply</button>
+                                <input type="text" class="form-control d-block" id="cupon">
+                                <button class="btn btn-danger" id="applybtn">Apply</button>
                             </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
     </main>
     <!-- footer section  -->
     <footer class="container mt-3 border-top border-2 p-4">
-        <h1 class="text-center">Total $1200</h1>
+        <h1 class="text-center">Total $<span id="mainTotal">1299</span></h1>
     </footer>
     <!-- link with js -->
     <script src="./app.js"></script>
