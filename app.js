@@ -16,7 +16,7 @@ const memory = document.getElementById('extra-memory-cost');
 const storage = document.getElementById('extraStorage'); 
 const dalivery = document.getElementById('Dalivery'); 
 const total = document.getElementById('totalAmount');
-g
+
 const cupon = document.getElementById('cupon');
 const apply = document.getElementById('applybtn');
 
@@ -30,7 +30,7 @@ memory_8.addEventListener('click',function() {
     showAmout(memory,0);
 });
 memory_16.addEventListener('click',function() {
-    showAmout(memory,100);
+    showAmout(memory,180);
     
 });
 // storage btn click 
@@ -41,7 +41,7 @@ ssd512.addEventListener('click',function() {
     showAmout(storage,100);
 });
 ssd1Tb.addEventListener('click',function() {
-    showAmout(storage,200);
+    showAmout(storage,180);
 });
 // Dalivery btn click 
 primeDalivery.addEventListener('click',function() {
@@ -53,12 +53,11 @@ chargeDalivery.addEventListener('click',function() {
 
 apply.addEventListener('click', function () {
 
-    if (cupon.value == 'mishrat') {
+    if (cupon.value == 'stevekaku') {
        const discount = parseFloat(total.innerText) * 0.2;
        const finalTotal= parseFloat(total.innerText) - discount;
        mainTotal.innerText = finalTotal;
        cupon.value = "";
-    
     }
 });
 
